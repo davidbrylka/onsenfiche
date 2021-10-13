@@ -3,7 +3,12 @@
     "description": "Essais de TDD",
     "autoload": {
         "psr-4": {
-            "Moi\\TddEssais\\": "src/"
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TddEssais\\": "tests/"
         }
     },
     "authors": [
