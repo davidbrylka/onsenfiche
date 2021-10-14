@@ -4,11 +4,24 @@ namespace TddEssais;
 
 use PHPUnit\Framework\TestCase;
 
-class EssaisTest extends TestCase
+class MakeCarTest extends TestCase
 {
+    private $tyreBrand;
+    private $doors;
+    private $motor;
 
-    public function testMethode1()
+
+    public function testAddTyres(string $tyrebrand)
     {
-        $this->assertTrue(true);
+        $this->assertEquals("Michelin", $this->tyrebrand);
+        $this->tyreBrand = $tyrebrand;
+    }
+    public function testAddDoors($nbDoors)
+    {
+        $this->assertSame(3,$nbDoors);
+    }
+    public function testAddAMotor($motor)
+    {
+        $this->assertInstanceOf();
     }
 }

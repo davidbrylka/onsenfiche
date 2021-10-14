@@ -1,12 +1,11 @@
 <?php
 
-namespace App;
+namespace TddEssais;
 
-
-class Essais
+class MakeCar
 {
 
-    public function Methode1()
+    public function addTyres()
     {
 
     }
