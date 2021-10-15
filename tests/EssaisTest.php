@@ -11,17 +11,22 @@ class MakeCarTest extends TestCase
     private $motor;
 
 
-    public function testAddTyres(string $tyrebrand)
+    public function testAddTyres()
     {
-        $this->assertEquals("Michelin", $this->tyrebrand);
-        $this->tyreBrand = $tyrebrand;
+        $newTyre = new FakeTyres();
+        $this->assertEquals("Michelin", $newTyre->getTyreName());
     }
-    public function testAddDoors($nbDoors)
+    public function testAddDoors()
     {
-        $this->assertSame(3,$nbDoors);
+        $door = new FakeDoor();
+        $this->assertSame("vitree", $door->toleOuVitree());
     }
-    public function testAddAMotor($motor)
+    public function testAddAMotor()
     {
-        $this->assertInstanceOf();
+        $newMotor=new SpyMotor(4);
+        $numberOfCylinderIs=$newMotor->getNumberOfCylinder();
+
+        $this->assertTrue($newMotor->numberOfCylinderFlag,"Methode getNumberOfCylinderCalled");
     }
 }
+

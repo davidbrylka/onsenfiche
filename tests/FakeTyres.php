@@ -2,7 +2,7 @@
 
 namespace TddEssais;
 
-class DummyTires
+class FakeTyres
 {
     public function getTyreName()
     {
