@@ -3,13 +3,13 @@
 namespace TddEssais;
 
 use PHPUnit\Framework\TestCase;
+use Starter;
 
 class MakeCarTest extends TestCase
 {
     private $tyreBrand;
     private $doors;
     private $motor;
-
 
     public function testAddTyres()
     {
@@ -23,10 +23,18 @@ class MakeCarTest extends TestCase
     }
     public function testAddAMotor()
     {
-        $newMotor=new SpyMotor(4);
-        $numberOfCylinderIs=$newMotor->getNumberOfCylinder();
+        $newMotor = new SpyMotor(4);
+         $numberOfCylinderIs = $newMotor->getNumberOfCylinder();
 
-        $this->assertTrue($newMotor->numberOfCylinderFlag,"Methode getNumberOfCylinderCalled");
+        $this->assertTrue($newMotor->numberOfCylinderFlag, "Methode getNumberOfCylinderCalled");
+    }
+
+    public function testDemarrage()
+    {
+        $newStarter = $this
+        ->getMockBuilder(Starter::class)
+        ->disableOriginalConstructor()
+        ->getMock();
+
     }
 }
-
