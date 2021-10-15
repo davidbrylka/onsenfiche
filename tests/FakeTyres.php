@@ -10,6 +10,10 @@ class FakeTyres implements TyreInterface{
     {
     return "Michelin";
     }
+    public function getTyreSize()
+    {
+        
+    }
 
 }
 

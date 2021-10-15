@@ -2,6 +2,7 @@
 
 namespace TddEssais;
 
+use App\Model\Car;
 use PHPUnit\Framework\TestCase;
 use Starter;
 
@@ -11,30 +12,26 @@ class MakeCarTest extends TestCase
     private $doors;
     private $motor;
 
-    public function testAddTyres()
+    public function testInstanceCar()
     {
-        $newTyre = new FakeTyres();
-        $this->assertEquals("Michelin", $newTyre->getTyreName());
-    }
-    public function testAddDoors()
-    {
-        $door = new FakeDoor();
-        $this->assertSame("vitree", $door->toleOuVitree());
-    }
-    public function testAddMotor()
-    {
-        $newMotor = new SpyMotor(4);
-         $numberOfCylinderIs = $newMotor->getNumberOfCylinder();
-
-        $this->assertTrue($newMotor->numberOfCylinderFlag, "Methode getNumberOfCylinderCalled");
+        $car = new Car(4, 5);
+        $this->assertInstanceOf(Car::class, $car);
     }
 
-    public function testDemarrage()
+    public function testParamCar()
     {
-        $newStarter = $this
-        ->getMockBuilder(Starter::class)
-        ->disableOriginalConstructor()
-        ->getMock();
+        $car = new Car(4, 5);
+        $this->assertSame(4, $car->getNumberOfWheels());
+        $this->assertSame(5, $car->getNumberOfDoors());
+    }
+    public function testParamCars()
+    {
+        $cars = [[4, 3], [2, 4],[7,3]];
 
+        foreach ($cars as $data) {
+            $car = new Car($data[0], $data[1]);
+            $this->assertSame($data[0], $car->getNumberOfWheels());
+            $this->assertSame($data[1], $car->getNumberOfDoors());
+        }
     }
 }

@@ -10,6 +10,10 @@ class Tyre implements TyreInterface{
     {
         
     }
+    public function getTyreSize()
+    {
+        
+    }
     
 }
 
