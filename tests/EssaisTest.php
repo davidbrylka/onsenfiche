@@ -21,7 +21,7 @@ class MakeCarTest extends TestCase
         $door = new FakeDoor();
         $this->assertSame("vitree", $door->toleOuVitree());
     }
-    public function testAddAMotor()
+    public function testAddMotor()
     {
         $newMotor = new SpyMotor(4);
          $numberOfCylinderIs = $newMotor->getNumberOfCylinder();

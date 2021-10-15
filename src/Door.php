@@ -1,13 +1,15 @@
 <?php
 
-namespace TddEssais;
+namespace App;
 
 use App\Interface\DoorInterface;
 
-class FakeDoor implements DoorInterface{
+class Door implements DoorInterface{
 
     public function toleOuVitree()
     {
-    return "vitree";
     }
+    
 }
+
+?>

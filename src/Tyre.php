@@ -1,16 +1,16 @@
 <?php
 
-namespace TddEssais;
+namespace App;
 
 use App\Interface\TyreInterface;
 
-class FakeTyres implements TyreInterface{
+class Tyre implements TyreInterface{
 
     public function getTyreName()
     {
-    return "Michelin";
+        
     }
-
+    
 }
 
 ?>
